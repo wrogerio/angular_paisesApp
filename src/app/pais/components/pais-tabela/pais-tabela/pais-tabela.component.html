@@ -21,7 +21,7 @@
       <td>{{ item.name }} / {{ item.capital }}</td>
       <td>{{ item.population | number }}</td>
       <td>
-        <a [routerLink]="['/pais', item.alpha2Code]">ver</a>
+        <a target="_blank" [routerLink]="['/pais', item.alpha2Code]">ver</a>
       </td>
     </tr>
   </tbody>

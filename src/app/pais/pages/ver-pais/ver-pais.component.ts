@@ -11,6 +11,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class VerPaisComponent implements OnInit {
   pais!: Country;
+  linguas: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,6 +24,10 @@ export class VerPaisComponent implements OnInit {
         switchMap((param) => this.paisService.buscarPorCodigo(param['paisId'])),
         tap((pais) => (this.pais = pais))
       )
-      .subscribe((pais) => (this.pais = pais));
+      .subscribe((pais) => {
+        this.pais = pais;
+        this.linguas = pais.languages.map((lingua) => lingua.name).join(', ');
+        console.log(pais);
+      });
   }
 }

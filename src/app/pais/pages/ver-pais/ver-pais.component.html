@@ -7,17 +7,40 @@
     </h2>
   </div>
   <div class="row">
-    <div class="col-4">
+    <div class="col-2">
       <h3>Bandeira</h3>
       <img class="imgBandeira" [src]="pais.flags.png" alt="" />
     </div>
-    <div class="col-4">
-      <h3>Capital</h3>
-      <span>{{ pais.capital }}</span>
-    </div>
-    <div class="col-4">
-      <h3>População</h3>
-      <span>{{ pais.population | number }}</span>
+    <div class="col">
+      <h3>Informação</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="font-weight-bold"><b>Nome</b>:</span> {{ pais.name }}
+        </li>
+        <li class="list-group-item">
+          <span class="font-weight-bold"><b>Capital</b>:</span>
+          {{ pais.capital }}
+        </li>
+        <li class="list-group-item">
+          <span class="font-weight-bold"><b>Região</b>:</span> {{ pais.region }}
+        </li>
+        <li class="list-group-item">
+          <span class="font-weight-bold"><b>Sub Região</b>:</span>
+          {{ pais.subregion }}
+        </li>
+        <li class="list-group-item">
+          <span class="font-weight-bold"><b>População</b>:</span>
+          {{ pais.population }}
+        </li>
+        <li class="list-group-item">
+          <span class="font-weight-bold"><b>Linguas</b>:</span>
+          {{ linguas }}
+        </li>
+        <li class="list-group-item">
+          <span class="font-weight-bold"><b>Moeda</b>:</span>
+          {{ pais.currencies[0].name }}
+        </li>
+      </ul>
     </div>
   </div>
 </ng-template>
