@@ -32,4 +32,8 @@ export class PorPaisComponent {
     );
     this.termo = '';
   }
+
+  sugerencias(valor: string) {
+    //todo: criar sugerencia
+  }
 }

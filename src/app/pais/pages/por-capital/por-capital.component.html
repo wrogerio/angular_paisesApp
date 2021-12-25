@@ -2,4 +2,22 @@
   <h2>Por Capital</h2>
 </div>
 <hr />
-<input type="text" class="form-control" placeholder="Informe a Capital" />
+<div class="row">
+  <div class="col">
+    <app-pais-input
+      (onEnter)="buscar($event)"
+      (onDebounce)="sugerencias($event)"
+    ></app-pais-input>
+  </div>
+</div>
+<hr />
+
+<div *ngIf="ehErro" class="alert alert-danger">
+  Nenhum país encontrado com o termo <b>{{ termoDigitado }}</b>
+</div>
+
+<div *ngIf="!ehErro && hasValue" class="row">
+  <div class="col">
+    <app-pais-tabela [listaDePaises]="listaDePaises"></app-pais-tabela>
+  </div>
+</div>
