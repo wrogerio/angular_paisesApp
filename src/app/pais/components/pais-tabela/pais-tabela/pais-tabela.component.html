@@ -18,10 +18,10 @@
           class="img-thumbnail rounded imgBandeira"
         />
       </td>
-      <td>{{ item.name.common }} / {{ item.capital }}</td>
+      <td>{{ item.name }} / {{ item.capital }}</td>
       <td>{{ item.population | number }}</td>
       <td>
-        <a [routerLink]="['/pais', item.cca2]">ver</a>
+        <a [routerLink]="['/pais', item.alpha2Code]">ver</a>
       </td>
     </tr>
   </tbody>

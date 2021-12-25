@@ -1,3 +1,23 @@
-<div class="akert alert-info p-2">
-  <h2>Ver Pais</h2>
-</div>
+<div *ngIf="!pais; else divPais" class="alert alert-info">Loading...</div>
+
+<ng-template #divPais>
+  <div class="akert alert-info p-2">
+    <h2>
+      Pais: <small>{{ pais.name }}</small>
+    </h2>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandeira</h3>
+      <img class="imgBandeira" [src]="pais.flags.png" alt="" />
+    </div>
+    <div class="col-4">
+      <h3>Capital</h3>
+      <span>{{ pais.capital }}</span>
+    </div>
+    <div class="col-4">
+      <h3>População</h3>
+      <span>{{ pais.population | number }}</span>
+    </div>
+  </div>
+</ng-template>

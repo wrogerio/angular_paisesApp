@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     component: PorCapitalComponent,
   },
   {
-    path: 'pais/:id',
+    path: 'pais/:paisId',
     component: VerPaisComponent,
   },
   {

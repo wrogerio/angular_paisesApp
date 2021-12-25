@@ -7,7 +7,7 @@ import { Country } from '../interfaces/pais.interface';
   providedIn: 'root',
 })
 export class PaisService {
-  private apiURL: string = 'https://restcountries.com/v3.1';
+  private apiURL: string = 'https://restcountries.com/v2';
 
   constructor(private http: HttpClient) {}
 
@@ -17,5 +17,9 @@ export class PaisService {
 
   buscarPorCapital(codigo: string): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.apiURL}/capital/${codigo}`);
+  }
+
+  buscarPorCodigo(codigo: string): Observable<Country> {
+    return this.http.get<Country>(`${this.apiURL}/alpha/${codigo}`);
   }
 }
