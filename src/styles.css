@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0.2rem;
+}
+
+hr {
+  margin: 0.7rem auto 0.8rem auto;
+}
+
+.imgBandeira {
+  max-width: 100px;
+}

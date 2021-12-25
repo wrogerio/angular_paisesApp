@@ -1,0 +1,20 @@
+<div class="akert alert-info p-2">
+  <h2>Por País</h2>
+</div>
+<hr />
+<div class="row">
+  <div class="col">
+    <app-pais-input (onEnter)="buscar($event)"></app-pais-input>
+  </div>
+</div>
+<hr />
+
+<div *ngIf="ehErro" class="alert alert-danger">
+  Nenhum país encontrado com o termo <b>{{ termoDigitado }}</b>
+</div>
+
+<div *ngIf="!ehErro && hasValue" class="row">
+  <div class="col">
+    <app-pais-tabela [listaDePaises]="listaDePaises"></app-pais-tabela>
+  </div>
+</div>
