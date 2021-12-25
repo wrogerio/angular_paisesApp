@@ -27,7 +27,6 @@ export class VerPaisComponent implements OnInit {
       .subscribe((pais) => {
         this.pais = pais;
         this.linguas = pais.languages.map((lingua) => lingua.name).join(', ');
-        console.log(pais);
       });
   }
 }
