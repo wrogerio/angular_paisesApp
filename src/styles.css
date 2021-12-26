@@ -13,3 +13,7 @@ hr {
 .imgBandeira {
   max-width: 100px;
 }
+
+.cursor {
+  cursor: pointer;
+}

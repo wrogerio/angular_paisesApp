@@ -22,4 +22,8 @@ export class PaisService {
   buscarPorCodigo(codigo: string): Observable<Country> {
     return this.http.get<Country>(`${this.apiURL}/alpha/${codigo}`);
   }
+
+  buscarPorRegiao(codigo: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiURL}/regionalbloc/${codigo}`);
+  }
 }
