@@ -1,6 +1,9 @@
 <div class="akert alert-info p-2">
   <h2>
-    Por Região: <small>{{ regiaoAtiva }}</small>
+    Por Região:
+    <small
+      >{{ regiaoAtiva }}<span *ngIf="qtdPaises > 0"> {{ qtdPaises }}</span>
+    </small>
   </h2>
 </div>
 <hr />

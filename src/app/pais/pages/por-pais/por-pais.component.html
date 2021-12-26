@@ -11,6 +11,21 @@
     ></app-pais-input>
   </div>
 </div>
+
+<div class="row">
+  <div class="col">
+    <ul class="list-group">
+      <li
+        *ngFor="let item of paisesSugeridos"
+        class="list-group-item list-group-item-action"
+        (click)="buscar(item.name)"
+      >
+        {{ item.name }}
+      </li>
+    </ul>
+  </div>
+</div>
+
 <hr />
 
 <div *ngIf="ehErro" class="alert alert-danger">

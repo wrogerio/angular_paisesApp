@@ -15,6 +15,7 @@ export class PorPaisComponent {
   ehErro: boolean = false;
   hasValue: boolean = false;
   listaDePaises: Country[] = [];
+  paisesSugeridos: Country[] = [];
 
   buscar(termo: string) {
     this.termo = termo;
@@ -30,10 +31,21 @@ export class PorPaisComponent {
         this.listaDePaises = [];
       }
     );
+
+    termo = '';
     this.termo = '';
+    this.paisesSugeridos = [];
   }
 
   sugerencias(valor: string) {
-    //todo: criar sugerencia
+    this.paisesSugeridos = [];
+    this.paisService.buscarPais(valor).subscribe(
+      (paises) => {
+        this.paisesSugeridos = paises.length > 0 ? paises.slice(0, 10) : [];
+      },
+      (err) => {
+        this.paisesSugeridos = [];
+      }
+    );
   }
 }

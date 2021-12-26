@@ -37,6 +37,7 @@ export class PorRegionComponent implements OnInit {
   paises: Country[] = [];
   regioes01: Regiao[] = [];
   regioes02: Regiao[] = [];
+  qtdPaises: number = 0;
 
   constructor(private paisService: PaisService) {
     const mid = Math.floor(this.regioes.length / 2);
@@ -62,6 +63,8 @@ export class PorRegionComponent implements OnInit {
     this.regiaoAtiva = regiao;
     this.paisService.buscarPorRegiao(regiao).subscribe((paises) => {
       this.paises = paises;
+      this.qtdPaises = paises.length;
+      console.log(this.paises);
     });
   }
 }

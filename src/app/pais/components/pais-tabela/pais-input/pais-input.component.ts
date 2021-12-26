@@ -15,7 +15,7 @@ export class PaisInputComponent implements OnInit {
   termo: string = '';
 
   ngOnInit() {
-    this.debouncer.pipe(debounceTime(600)).subscribe((v) => {
+    this.debouncer.pipe(debounceTime(300)).subscribe((v) => {
       this.onDebounce.emit(v);
     });
   }

@@ -9,11 +9,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of listaDePaises; let i = index">
+    <tr
+      *ngFor="let item of listaDePaises; let i = index"
+      class="animate__animated animate__fadeIn"
+    >
       <td>{{ i + 1 }}</td>
       <td>
         <img
-          [src]="item.flags.png"
+          [src]="item.flag"
           alt=""
           class="img-thumbnail rounded imgBandeira"
         />
